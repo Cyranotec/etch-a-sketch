@@ -1,0 +1,36 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header button {
+    border-style: none;
+}
+
+div {
+    border: .1px dotted grey;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container div {
+    width: calc(100%/var(--columns, 16));
+}
+
+.touched {
+    background-color: #ff9900;
+}
