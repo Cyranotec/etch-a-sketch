@@ -6,7 +6,7 @@ function generateGrid(x) {
     total = (x * x) + 1;
     for (let i = 1; i < total; i++) {
         const div = document.createElement('div');
-        div.textContent = i;
+        // div.textContent = i;
         div.style.setProperty('opacity', '.1');
         div.addEventListener('mouseenter', follow)
 
@@ -31,8 +31,9 @@ function follow(e) {
     e.target.style.setProperty('background-color', color);
     // aumentar la opacidad hasta llegar a q
     const opacidad = parseFloat(window.getComputedStyle(e.target).opacity);
-    const nuevaOpacidad = Math.min(opacidad + .1, 1);
-    e.target.style.setProperty('opacity', nuevaOpacidad);
+    //Si la opacidad está al máximo se resetea
+    const nuevaOpacidad = opacidad == 1 ? .1 : Math.min(opacidad + .1, 1);
+    e.target.style.setProperty('opacity', nuevaOpacidad);   
 
     console.log(`${e.target.textContent} : ${nuevaOpacidad}`)
 
@@ -40,3 +41,4 @@ function follow(e) {
 
 
 document.querySelector('#genNew').addEventListener('click', askForColumns);
+generateGrid(16);

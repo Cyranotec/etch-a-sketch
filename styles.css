@@ -7,6 +7,8 @@
 body {
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 header {
@@ -15,7 +17,7 @@ header {
 }
 
 header button {
-    border-style: none;
+    padding: 1rem;
 }
 
 div {
@@ -25,10 +27,13 @@ div {
 #container {
     display: flex;
     flex-wrap: wrap;
+    width: 40%;
+    aspect-ratio: 1/1;
 }
 
 #container div {
     width: calc(100%/var(--columns, 16));
+    border: 1px solid grey;
 }
 
 .touched {
